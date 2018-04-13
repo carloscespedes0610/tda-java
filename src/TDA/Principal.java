@@ -37,12 +37,13 @@ public class Principal implements Nodo_Interface<per>{
     }
     
     public void probar(){
-        Lista<per> l=new Lista<per>(this);
+        Lista<per> l=new Lista<>(this);
         l.Insertar(new per("carlos", 28));
         l.Insertar(new per("erika", 29));
         l.Insertar(new per("luis", 21));
         l.Imprimir();
         
+        System.out.println("get: "+l.get(3).toString());
     }
 
 

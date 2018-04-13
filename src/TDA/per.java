@@ -10,8 +10,8 @@ package TDA;
  * @author cespe
  */
 public class per {
-    String nombre;
-    int edad;
+    private String nombre;
+    private int edad;
 
     public per(String nombre, int edad) {
         this.nombre = nombre;

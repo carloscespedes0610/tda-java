@@ -46,8 +46,26 @@ public class Lista<T> {
         }
     }
     
-    public T get(){
-        return this.raiz.getValor();
+    public T get(int posicion){
+        if(!Vacia()){
+            if(posicion<=this.dimension){
+                Nodo<T> aux=this.raiz;
+                int c=0;
+                while(aux!=null){
+                    if(c==posicion){
+                        return aux.getValor();
+                    }
+                    c++;
+                    aux=aux.getSiguiente();
+                }
+            }
+            System.out.println("Posicion Invalida");
+            return null;
+            
+        }else{
+            System.out.println("Lista Vacia");
+            return null;
+        }
     }
     
     public void Imprimir(){
@@ -55,7 +73,6 @@ public class Lista<T> {
             Nodo<T> aux = this.raiz;
             int i =0;
             while(aux!=null){
-//                System.out.println("i: "+i+" -> "+this.inter.Imprimir(aux.getValor()));
                 System.out.println("i: "+i+" -> "+aux.getValor().toString());
                 aux=aux.getSiguiente();
                 i++;
