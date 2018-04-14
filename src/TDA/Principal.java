@@ -21,19 +21,8 @@ public class Principal implements Nodo_Interface<per>{
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        /*int vec[] = {1,2,3,4};
-        int aux[] = vec;
-        vec =null;
-        System.out.println("vec: "+vec+" aux: "+aux);
-        
-        per a[]={new per("carlos", 28),new per("erika", 29)};
-        per b[]=a;
-        a=null;
-        System.out.println("a: "+a+" b: "+b[1].nombre);*/
-        
         Principal p =new Principal();
         p.probar();
-        
     }
     
     public void probar(){
@@ -47,6 +36,10 @@ public class Principal implements Nodo_Interface<per>{
         l.Insertar_Ordenado(new per("isa", 3));
         l.Insertar_Ordenado(new per("karla", 4));
         l.Insertar_Ordenado(new per("mau", 24));
+        l.Imprimir();
+        
+        System.out.println("---------despues de eliminar --------------");
+        l.eliminar(10);
         l.Imprimir();
         
     }

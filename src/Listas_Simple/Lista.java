@@ -76,6 +76,48 @@ public class Lista<T> {
         }
     }
     
+    public void eliminar(int posicion){
+        if(!Vacia()){
+            if(this.dimension<=posicion){
+                System.out.println("Error Posicion Invalida");
+                return;
+            }
+            // preguntamos si el primero
+            if(posicion==0){
+                this.raiz=this.raiz.getSiguiente();
+                this.dimension--;
+                return;
+            }
+            // preguntamos si es ultimo
+            if(this.dimension==posicion+1){
+                Nodo<T> aux=this.raiz;
+                Nodo<T> anterior=null;
+                while(aux.getSiguiente()!=null){
+                    anterior=aux;
+                    aux=aux.getSiguiente();
+                }
+                anterior.setSiguiente(null);
+                this.dimension--;
+                return;
+            }
+                // si es del medio
+                int c=0;
+                Nodo<T> aux=this.raiz;
+                Nodo<T> anterior=null;
+                while(aux!=null){
+                    if(c==posicion){
+                        // sabemos que no habra excepcion de error de aux.getsiguiente
+                        // por que sabemos que es un elemento del medio de la lista
+                        anterior.setSiguiente(aux.getSiguiente());
+                    }
+                    anterior =aux;
+                    aux=aux.getSiguiente();c++;
+                }
+        }else{
+            System.out.println("Lista Vacia, Error al Eliminar");
+        }
+    }
+    
     public T get(int posicion){
         if(!Vacia()){
             if(posicion<=this.dimension){
