@@ -2,6 +2,7 @@ package TDA;
 
 import Listas_Simple.Lista;
 import Listas_Simple.Nodo_Interface;
+import Pila_Simple.Pila;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,10 +23,34 @@ public class Principal implements Nodo_Interface<per>{
     public static void main(String[] args) {
         // TODO code application logic here
         Principal p =new Principal();
-        p.probar();
+        p.probar_pila();
     }
     
-    public void probar(){
+    public void probar_pila(){
+        Pila<per> p=new Pila();
+        p.Push(new per("carlos", 28));
+        p.Push(new per("erika", 29));
+        p.Push(new per("luis", 21));
+        p.Push(new per("paola", 16));
+        p.Push(new per("vivi", 50));
+        p.Push(new per("mary", 40));
+        p.Push(new per("isa", 3));
+        p.Push(new per("karla", 4));
+        p.Push(new per("mau", 24));
+        p.Imprimir();
+        System.out.println("--- desapilando ---");
+        System.out.println(p.Pop().toString());
+        System.out.println(p.Pop().toString());
+        System.out.println(p.Pop().toString());
+        System.out.println(p.Pop().toString());
+        System.out.println(p.Pop().toString());
+        System.out.println(p.Pop().toString());
+        System.out.println(p.Pop().toString());
+        System.out.println(p.Pop().toString());
+        System.out.println(p.Pop().toString());
+    }
+    
+    public void probar_lista(){
         Lista<per> l=new Lista<>(this);
         l.Insertar_Ordenado(new per("carlos", 28));
         l.Insertar_Ordenado(new per("erika", 29));
