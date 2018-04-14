@@ -13,13 +13,11 @@ import Listas_Simple.Nodo_Interface;
  *
  * @author cespe
  */
-public class Pila <T>{
+public class Pila_Doble <T>{
     private Nodo_Doble<T> Tope;
     private int dimension;
-    //private Nodo_Interface<T> inter;
 
-    public Pila() {
-        //this.inter=interface_nodo;
+    public Pila_Doble() {
     }
     
     public void Push(T elemento){

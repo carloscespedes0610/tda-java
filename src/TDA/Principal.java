@@ -2,7 +2,7 @@ package TDA;
 
 import Listas_Simple.Lista;
 import Listas_Simple.Nodo_Interface;
-import Pila_Simple.Pila;
+import Pila_Simple.Pila_Simple;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -27,7 +27,7 @@ public class Principal implements Nodo_Interface<per>{
     }
     
     public void probar_pila(){
-        Pila<per> p=new Pila();
+        Pila_Simple<per> p=new Pila_Simple<>();
         p.Push(new per("carlos", 28));
         p.Push(new per("erika", 29));
         p.Push(new per("luis", 21));
@@ -37,7 +37,7 @@ public class Principal implements Nodo_Interface<per>{
         p.Push(new per("isa", 3));
         p.Push(new per("karla", 4));
         p.Push(new per("mau", 24));
-        p.Imprimir();
+        p.imprimir();
         System.out.println("--- desapilando ---");
         System.out.println(p.Pop().toString());
         System.out.println(p.Pop().toString());
