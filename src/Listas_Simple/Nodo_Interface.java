@@ -10,6 +10,9 @@ package Listas_Simple;
  * @author cespe
  */
 public interface Nodo_Interface <T> {
-    
-   // public String Imprimir(T o);
+   
+   /*
+    comparar devuelve 1 si o1>o2, -1 si o1<o2 y 0 si o1=o2
+    */ 
+   public int Comparar(T o1, T o2);  
 }

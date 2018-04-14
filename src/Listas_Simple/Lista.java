@@ -46,6 +46,36 @@ public class Lista<T> {
         }
     }
     
+    public void Insertar_Ordenado(T o){
+        Nodo<T> nuevo = new Nodo<>(o,null);
+        if(Vacia()){
+            this.raiz=nuevo;
+            this.dimension++;
+        }else{
+            Nodo<T> aux = this.raiz;
+            Nodo<T> anterior = null;
+            // vamos avanzando si el elemento actual es menor que el que se va a insertar
+            while(aux!=null && this.inter.Comparar(aux.getValor(), nuevo.getValor())==-1){
+                anterior = aux;
+                aux=aux.getSiguiente();
+            }
+                        
+            // preguntamos si va en el primer elemento
+            if(anterior == null){
+                nuevo.setSiguiente(this.raiz);
+                this.raiz=nuevo;
+            }else{
+                // es del medio o ultimo
+                anterior.setSiguiente(nuevo);
+            }
+            // si aux!= null, significa que hay elementos todavia detras del nuevo
+            if(aux!=null){
+                nuevo.setSiguiente(aux);
+            }
+            this.dimension++;
+        }
+    }
+    
     public T get(int posicion){
         if(!Vacia()){
             if(posicion<=this.dimension){
