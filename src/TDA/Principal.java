@@ -1,5 +1,6 @@
 package TDA;
 
+import Cola.Cola;
 import Listas_Simple.Lista;
 import Listas_Simple.Nodo_Interface;
 import Pila_Simple.Pila_Simple;
@@ -23,7 +24,31 @@ public class Principal implements Nodo_Interface<per>{
     public static void main(String[] args) {
         // TODO code application logic here
         Principal p =new Principal();
-        p.probar_pila();
+        p.probar_cola();
+    }
+    
+    public void probar_cola(){
+        Cola<per> p=new Cola<>();
+        p.Encolar(new per("carlos", 28));
+        p.Encolar(new per("erika", 29));
+        p.Encolar(new per("luis", 21));
+        p.Encolar(new per("paola", 16));
+        p.Encolar(new per("vivi", 50));
+        p.Encolar(new per("mary", 40));
+        p.Encolar(new per("isa", 3));
+        p.Encolar(new per("karla", 4));
+        p.Encolar(new per("mau", 24));
+        p.Imprimir();
+        System.out.println("--- desapilando ---");
+        System.out.println(p.Desencolar().toString());
+        System.out.println(p.Desencolar().toString());
+        System.out.println(p.Desencolar().toString());
+        System.out.println(p.Desencolar().toString());
+        System.out.println(p.Desencolar().toString());
+        System.out.println(p.Desencolar().toString());
+        System.out.println(p.Desencolar().toString());
+        System.out.println(p.Desencolar().toString());
+        System.out.println(p.Desencolar().toString());
     }
     
     public void probar_pila(){
