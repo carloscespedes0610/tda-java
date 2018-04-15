@@ -1,5 +1,8 @@
 package TDA;
 
+import Arboles.Arbol_Binario;
+import Arboles.Interface_Arbol_Binario;
+import Arboles.Nodo_Ab;
 import Cola.Cola;
 import Listas_Simple.Lista;
 import Listas_Simple.Nodo_Interface;
@@ -16,7 +19,7 @@ import Pila_Simple.Pila_Simple;
  *
  * @author cespe
  */
-public class Principal implements Nodo_Interface<per>{
+public class Principal implements Nodo_Interface<per>,Interface_Arbol_Binario<Integer>{
 
     /**
      * @param args the command line arguments
@@ -24,7 +27,22 @@ public class Principal implements Nodo_Interface<per>{
     public static void main(String[] args) {
         // TODO code application logic here
         Principal p =new Principal();
-        p.probar_cola();
+        p.probar_arboles_bin();
+    }
+    
+    public void probar_arboles_bin(){
+       Arbol_Binario <Integer> ab=new Arbol_Binario<>(this);
+       ab.Insertar(5);
+       ab.Insertar(7);
+       ab.Insertar(3);
+       ab.Insertar(2);
+       ab.Insertar(4);
+       ab.Insertar(1);
+       
+       ab.imprimir_preOrden();
+       ab.imprimir_inOrden();
+       ab.imprimir_postOrden();
+       ab.altura();
     }
     
     public void probar_cola(){
@@ -109,6 +127,18 @@ public class Principal implements Nodo_Interface<per>{
             return 1;
         } else {
             if(a<b){
+                return -1;
+            }
+            return 0;
+        }
+    }
+
+    @Override
+    public int Comparar_AB(Integer o1, Integer o2) {
+        if(o1>o2){
+            return 1;
+        }else{
+            if(o1<o2){
                 return -1;
             }
             return 0;
